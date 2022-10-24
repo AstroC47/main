@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { getAddres, getKeplrClient } from './scripts/keplrUtil.js'
 import './App.css';
-import Header from './components/Header/Header.jsx'
-import Nav from './components/Nav/Nav.jsx'
-import Actions from './components/actionContainer/actionContainer.jsx'
+import Header from './components/widgets/Header/Header.jsx'
+import Nav from './components/widgets/Nav/Nav.jsx'
+import Actions from './components/widgets/actionContainer/actionContainer.jsx'
 import { useNewMoralisObject } from "react-moralis";
 import { useMoralisCloudFunction } from "react-moralis";
-import DbCall from './cloud/components/dbCalls/dbCall';
+import DbCall from './components/widgets/cloud/dbCall';
 
 export default function App() {
 
@@ -59,6 +59,7 @@ const { save } = useNewMoralisObject("Monster");
   
   <Nav handleKeplr={handleKepler}/>
   <Header/>
+  <h1>hello</h1>
   </>
 }
 

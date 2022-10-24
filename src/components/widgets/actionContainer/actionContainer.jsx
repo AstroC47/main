@@ -1,8 +1,8 @@
 import React from 'react'
 import './actionContainer.css'
-import { queryClassC, queryNft, setupClient, queryAddress, snapShot, nftCount } from '../../scripts/chainQuery.js'
+import { queryClassC, queryNft, setupClient, queryAddress, snapShot, nftCount } from '../../../scripts/chainQuery.js'
 import { useState } from 'react'
-import { send } from '../../scripts/chainMsg.js'
+import { send } from '../../../scripts/chainMsg.js'
 
 
 export default function ActionContainer(props) {
