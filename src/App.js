@@ -7,8 +7,17 @@ import Actions from './components/widgets/actionContainer/actionContainer.jsx'
 import { useNewMoralisObject } from "react-moralis";
 import { useMoralisCloudFunction } from "react-moralis";
 import DbCall from './components/widgets/cloud/dbCall';
+import Home from './components/pages/Home/Home'
+import Gallery from './components/pages/Gallery/Gallery'
+import Dashboard from './components/pages/Dashboard/Dashboard'
+import About from './components/pages/About/About'
+import Gaming from './components/pages/Gaming/Gaming'
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+
 
 export default function App() {
+
+  
 
   let [address,setAddress] = useState(0);
 
@@ -20,46 +29,62 @@ export default function App() {
     setAddress(newAddress)
   }
 
-const { save } = useNewMoralisObject("Monster");
 
-  const saveObject = async () => {
-    const data = {
-      strength: 1024,
-      ownerName: "Aegon",
-      canFly: true,
-    };
 
-    save(data, {
-      onSuccess: (monster) => {
-        // Execute any logic that should take place after the object is saved.
-        alert("New object created with objectId: " + monster.id);
-      },
-      onError: (error) => {
-        // Execute any logic that should take place if the save fails.
-        // error is a Moralis.Error with an error code and message.
-        alert("Failed to create new object, with error code: " + error.message);
-      },
-    });
-  };
+// const { save } = useNewMoralisObject("Monster");
 
-      const { fetch } = useMoralisCloudFunction(
-        "averageStars",
-        {owner : "Aegon"},
-        {autoFetch: false}
-      );
+//   const saveObject = async () => {
+//     const data = {
+//       strength: 1024,
+//       ownerName: "Aegon",
+//       canFly: true,
+//     };
 
-      const cloudCall = () =>{
-        fetch({
-          onSuccess: (data) => console.log(data)
-        })
-      }
+//     save(data, {
+//       onSuccess: (monster) => {
+//         // Execute any logic that should take place after the object is saved.
+//         alert("New object created with objectId: " + monster.id);
+//       },
+//       onError: (error) => {
+//         // Execute any logic that should take place if the save fails.
+//         // error is a Moralis.Error with an error code and message.
+//         alert("Failed to create new object, with error code: " + error.message);
+//       },
+//     });
+//   };
+
+//       const { fetch } = useMoralisCloudFunction(
+//         "averageStars",
+//         {owner : "Aegon"},
+//         {autoFetch: false}
+//       );
+
+//       const cloudCall = () =>{
+//         fetch({
+//           onSuccess: (data) => console.log(data)
+//         })
+//       }
 
 
   return <>
+{/* <Nav handleKeplr={handleKepler}/> */}
+<Router>
+      <Routes>
+          <Route path="/" >
+            <Route index element={<Home handleKeplr={handleKepler}/>} />
+            
+              <Route path='gallery' element={<Gallery/>}/>
+              <Route path='gaming' element= {<Gaming/>} />
+              <Route path='about' element={<About/>}/>
+              
+              <Route path='dashboard'>
+                <Route path=':usedId' element={<Dashboard/>}/>
+              </Route>
+              
+          </Route>
+      </Routes>
+</Router>
   
-  <Nav handleKeplr={handleKepler}/>
-  <Header/>
-  <h1>hello</h1>
   </>
 }
 

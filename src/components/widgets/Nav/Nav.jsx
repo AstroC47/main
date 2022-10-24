@@ -5,6 +5,8 @@ import dlogo from '../../../media/Discord-Logo-White.png';
 import klogo from '../../../media/keplrLogo.webp';
 import './Nav.css';
 
+import {Link} from 'react-router-dom'
+
 export default function Nav(props) {
 
     const handleClick = (event) => {
@@ -18,7 +20,8 @@ export default function Nav(props) {
 
     <nav id="navbar"className="navbar navbar-expand-md navbar-dark ">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"> <img src= {logo} alt="Area47 Banner" width="40" height="40"/></a>
+          <Link to='/'><img src= {logo} alt="Area47 Banner" width="40" height="40"/></Link>
+          {/* <a className="navbar-brand" href="#"> <img src= {logo} alt="Area47 Banner" width="40" height="40"/></a> */}
           
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -32,12 +35,25 @@ export default function Nav(props) {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#timeline">Gallery</a>
+                <Link to='/gallery'>
+                  {/* <a className="nav-link" href="#timeline">Gallery</a> */}
+                  Gallery
+                </Link>
               </li>
-              
+
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#disclaimer">About</a>
+                <a className="nav-link" href="gaming">Gaming</a>
               </li>
+
+              <li className="nav-item">
+              <Link to='/about'>
+                  {/* <a className="nav-link" href="#timeline">Gallery</a> */}
+                  About
+                </Link>
+                {/* <a className="nav-link active" aria-current="page" href="#disclaimer">About</a> */}
+              </li>
+
+              
 
               
                                  {/* <li class="nav-item dropdown">
