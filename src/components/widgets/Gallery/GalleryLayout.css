@@ -1,0 +1,22 @@
+.showCaseArea{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid silver;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.check{
+    background-color: blue;
+    min-width: 100px;
+    min-height: 100px;
+    padding: 100px;
+    border-color: black;
+}
