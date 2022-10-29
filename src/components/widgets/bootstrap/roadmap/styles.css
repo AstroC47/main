@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  border:0;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+body{
+  background-color:rgb(34, 33, 33) ;
+}
+
+#navbar {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    background-color: rgb(34, 33, 33);
+    z-index: 100;
+  }
+  
+  /* Navbar links */
+  #navbar a {
+    
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+  .btnWallet{
+      align-self: right;
+  }
+
+h1 {
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(49, 49, 49);
+  font-weight: bold;
+}
+
+p{
+  font-size: 90%;
+}
+
+.trans{
+  padding:2%;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.trans p{
+  font-size: 5%;
+  opacity: 1;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+  header{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      background-color:rgb(44, 44, 44);
+      color: rgb(0, 0, 0);
+  }
+
+  .bg {
+    background: #0BFFC2;
+    background: -moz-linear-gradient(45deg, #0BFFC2 0%, #6909C6 100%);
+    background: -webkit-linear-gradient(100deg, #0BFFC2 0%, #6909C6 100%);
+    /* box-shadow: 5px 5px 5px 5px inset; */
+    }
+
+  .colour{
+    background: #0BFFC2;
+    background: -moz-linear-gradient(45deg, #0BFFC2 0%, #2e89ff 100%);
+    background: -webkit-linear-gradient(100deg, #36faaf 0%, #2e89ff 100%);
+    color:rgb(254, 240, 255);    
+  }
+
+  .colourhigh{
+    background: #e30bff;
+    background: -moz-linear-gradient(45deg, #e30bff 0%, #6909C6 100%);
+    background: -webkit-linear-gradient(100deg,#e30bff 0%, #6909C6 100%);
+  }
+
+  .blank{
+    background-color: rgb(36, 36, 36);
+    color:aliceblue;
+    text-align: center;
+  }
+
+.ClassCName{
+  padding-top: 3%;
+  width: 60%;
+  height: 35%;
+}
+
+
+.nav-element{
+    display:flex;
+    align-items: center;
+}
+
+section{
+  display:flex;
+  justify-content: center;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  overflow: hidden;  /* Takes away white areas between sections*/
+}
+
+/* .preview-holder{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 75vw;
+  height: calc(75vw/2);
+  padding-top: 1%;
+  background-image: url("../media/previewLrg.webp");
+  background-size:100%;
+} */
+
+.mintContainer{
+display: flex;
+justify-content: center;
+align-self: center;
+padding-top: 5vw;
+}
+
+.mintBtn{
+  width: 10vw;
+  height: 100%;
+  min-width: 100px;
+  min-height: 40px;
+}
+
+
+.glowing-border{
+  outline:none;
+  border-color:#000000;
+  box-shadow: 0 0 20px 20px #000000;
+}
+
+.glowing-border:hover{
+  outline:none;
+  border-color:#ffffff;
+  box-shadow: 0 0 20px 20px #ffffff;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 1100px;
+}
+
+.preview{
+  width: 75vw;
+  height: calc(75vw/2);
+}
+
+.main{
+    text-align: center;
+    background-color:rgb(44, 44, 44);
+    color: aliceblue;
+    /* padding-top: 5%; */
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .disclaimer{
+    flex-direction: column;
+  }
+
+  .disclaimer p{
+    text-align: justify;
+  }
+  .info{
+    font-size: 1.3rem;
+  }
+
+  /* div.polaroid {
+    width: 20vw;
+    height: 20vw;
+    padding: 1% 1% 2% 1%;
+    border: 1px solid #BFBFBF;
+    background-color: rgb(201, 201, 201);
+    box-shadow: 10px 10px 5px #2b2b2b;
+    color: black;
+    font-size: calc(1vw);
+  }
+  
+  div.rotate_right {
+    float: left;
+    -ms-transform: rotate(7deg); /* IE 9
+    -webkit-transform: rotate(7deg); /* Safari 
+    transform: rotate(7deg);
+  }
+  
+  div.rotate_left {
+    float: left;
+    -ms-transform: rotate(-8deg); /* IE 9 
+    -webkit-transform: rotate(-8deg); /* Safari 
+    transform: rotate(-8deg);
+  }
+
+  .polaroid-container{
+      display:flex;
+      padding-left:10px;
+      padding-top: 50px;
+  } */
+
+  /* @media only screen and (max-width: 600px) {
+    .preview-holder{
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 75vw;
+      height: calc(75vw/2);
+      padding-top: 1%;
+      background-image: url("../media/previewSml.webp");
+      background-size:100%;
+    }
+  } */
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
