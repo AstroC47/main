@@ -9,9 +9,10 @@ body{
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    padding: 5rem;
+    padding: 2rem; /* padding for info blocks inside main block*/
     margin: 0 auto 1rem auto;
     overflow: hidden;
+    max-width: 1200px
 }
 .timeline:after {
     content: "";
@@ -29,7 +30,9 @@ body{
     position: relative;
     margin-bottom: 30px;
 }
-.timeline-row .timeline-time {
+
+.timeline-row .timeline-time { 
+    /* left outside heading */
     position: absolute;
     right: 50%;
     top: 15px;
@@ -46,12 +49,13 @@ body{
 .timeline-row .timeline-time large {
   display: block;
   font-size: 1.4rem;
-  color:#06ebf3;        /*Large text next to info block*/
+  color:#e30bff;        /*Large text next to info block*/
 }
 
 .timeline-row .timeline-content {
     position: relative;
     padding: 20px 30px;
+    /* background: #272e48; */
     background: #e30bff;
     background: -moz-linear-gradient(45deg, #e30bff 0%, #00b5fd 100%);
     background: -webkit-linear-gradient(100deg,#e30bff 0%, #00b5fd 100%);
@@ -63,29 +67,9 @@ body{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    
 }
-.timeline-row .timeline-content:after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    height: 16px;
-    width: 16px;
-    background: #e30bff;
-}
-.timeline-row .timeline-content:before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    right: -49px;
-    width: 20px;
-    height: 20px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    z-index: 10;
-    background: #00b5fd;
-    border: 2px dashed #e30bff;
-}
+
 .timeline-row .timeline-content h4 {
     margin: 0 0 20px 0;
     overflow: hidden;
@@ -121,8 +105,9 @@ body{
     background: linear-gradient(120deg, #00b5fd 0%, #0047b1 100%);
 }
 .timeline-row:nth-child(even) .timeline-content {
-    margin-left: 40px;
+    margin-left: 15px;
     text-align: left;
+        /* width: 40vw */
 }
 .timeline-row:nth-child(even) .timeline-content:after {
     left: -8px;
@@ -130,6 +115,7 @@ body{
     border-bottom: 0;
     border-left: 0;
     transform: rotate(-135deg);
+
 }
 .timeline-row:nth-child(even) .timeline-content:before {
     left: -52px;
@@ -147,7 +133,7 @@ body{
     margin-left: 20px;
 }
 .timeline-row:nth-child(odd) .timeline-content {
-    margin-right: 40px;
+    margin-right: 20px;
 }
 .timeline-row:nth-child(odd) .timeline-content:after {
     right: -8px;
@@ -156,7 +142,7 @@ body{
     transform: rotate(45deg);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
     .timeline {
         padding: 15px;
     }

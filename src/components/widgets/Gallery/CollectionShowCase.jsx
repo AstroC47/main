@@ -23,7 +23,7 @@ const getImg = async() =>{
   return (
     <>
     <div className="showCaseMain">
-        <div className="preview">
+        <div className="nftPreview">
             <img className={`${props.name}`} src={preview_URL} alt= 'img' width="100" height="100"/>
         </div>
         <div className="actions">

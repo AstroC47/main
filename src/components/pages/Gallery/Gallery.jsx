@@ -1,15 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import Nav from '../../widgets/Nav/Nav.jsx'
+import Header from '../../widgets/Header/Header.jsx'
 import GalleryLayout from '../../widgets/Gallery/GalleryLayout.jsx'
-
-
+import Search from '../../widgets/Gallery/GallerySearch.jsx'
+import GalleryList from '../../widgets/Gallery/GalleryList.jsx'
 
 
 export default function Gallery(props) {
-  
-  const state = {
-  nftData : []
-}
   
 const [nftData,setNftData] = useState([]);
 
@@ -61,14 +57,12 @@ useEffect(function() {
 })
 
 
-
   return (
     <>
-    <Nav/>
-    <button></button>
-    <h1>Gallery</h1>
-    <h2>Coming Soon...</h2>
-    <GalleryLayout nftData={TestData}/>
+    <Header/>
+    <Search/>
+    {/* <GalleryLayout nftData={TestData}/> */}
+    <GalleryList/>
     </>
   )
 }

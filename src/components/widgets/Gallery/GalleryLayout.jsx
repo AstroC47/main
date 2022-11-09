@@ -6,8 +6,15 @@ export default function GalleryLayout(props) {
 
   return (
     <>
-    <div className="main">
-        <div className="showCaseArea">
+    <div className="background">
+    <div className="mainShowcaseArea">
+      
+      <div className="blockBorder">
+        <div className="blockBorderInner">
+
+        
+        <div className="showCaseArea blankLite">
+
             {
             props.nftData.map( ({key,name,price,prevImg,tokenId}) => 
             <CollectionShowCase 
@@ -19,6 +26,9 @@ export default function GalleryLayout(props) {
             }
 
         </div>
+        </div>
+      </div>
+    </div>
     </div>
     </>
   )

@@ -19,4 +19,11 @@ body{
   color: #61dafb;
 }
 
+h1 {
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(0, 255, 255);
+  font-weight: bold;
+}
+
+
 

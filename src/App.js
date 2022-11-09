@@ -12,8 +12,8 @@ import Gallery from './components/pages/Gallery/Gallery'
 import Dashboard from './components/pages/Dashboard/Dashboard'
 import About from './components/pages/About/About'
 import Gaming from './components/pages/Gaming/Gaming'
+import Create from './components/pages/Create/Create'
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-
 
 export default function App() {
 
@@ -68,14 +68,21 @@ export default function App() {
 
   return <>
 {/* <Nav handleKeplr={handleKepler}/> */}
+
+
 <Router>
+  <Nav handleKeplr={handleKepler}/>
       <Routes>
           <Route path="/" >
-            <Route index element={<Home handleKeplr={handleKepler}/>} />
+            <Route index element={<Home/>} />
             
-              <Route path='gallery' element={<Gallery/>}/>
+              <Route path='gallery' element={<Gallery/>}>
+              <Route path=':Collection' element={<Gallery/>}/>
+                </Route>
+                
               <Route path='gaming' element= {<Gaming/>} />
               <Route path='about' element={<About/>}/>
+              <Route path='create' element={<Create/>}/>
               
               <Route path='dashboard'>
                 <Route path=':usedId' element={<Dashboard/>}/>

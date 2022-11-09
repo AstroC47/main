@@ -2,11 +2,24 @@ import React from 'react'
 import './area47Styles.css'
 import './styles.css'
 import './timelineStyles.css'
-import TimeLineBubble from './TimeLineBubble.jsx'
 import laserEyes from '../../../../media/10.webp'
-import parallel from '../../../../media/10.webp'
+import parallel from '../../../../media/8.webp'
+import RoadMapPreview from '../Carousell/RoadMapPreview.jsx'
 
 export default function Roadmap() {
+
+  const parallelImages = [
+    {
+    n: '0',
+    name:true,
+    image: parallel
+  },
+  {
+    n: '1',
+    name:false,
+    image: laserEyes
+  }
+]
 
   return (
     <>
@@ -71,13 +84,12 @@ export default function Roadmap() {
 
           <section class="blank">
             
-            <div class="container">
+
               <div class="timeline">
 
               <div class="timeline-row">
                     <div class="timeline-time">
                       <large>First Project: Classified Cats!</large>
-                      {/* <img className = 'img-fluid rounded' src={laserEyes}/> */}
                     </div>
                     <div class="timeline-content">
                       <i class="icon-code"></i>
@@ -93,7 +105,7 @@ export default function Roadmap() {
                         This collection was the start of the Area47 discord, Twitter and brought forth the extremely rare laser eye cats sub-committee
                       </p>
 
-                      <a target="_blank" href='https://app.stargaze.zone/marketplace/stars1j875gkljknhq7n2g5lsckl3zuj2tyxvqgz5gyku0xxssl0usm5wqc750p3'>Buy here</a>
+                      <a class="buyHere" target="_blank" rel="noreferrer" href='https://app.stargaze.zone/marketplace/stars1j875gkljknhq7n2g5lsckl3zuj2tyxvqgz5gyku0xxssl0usm5wqc750p3'>Buy</a>
                       {/* <div class="thumbs">
                         <div class="thumbs">
                       </div>
@@ -101,7 +113,7 @@ export default function Roadmap() {
                       <div class="">
                         <span class="badge badge-pill">ClassC</span>
                         <span class="badge badge-pill">Laser Legend</span>
-                        <span class="badge badge-pill">Stakeing Rewards</span>
+                        <span class="badge badge-pill">Staking Rewards</span>
                         <span class="badge badge-pill">Discord</span>
                         <span class="badge badge-pill">Twitter</span>
                       </div>
@@ -114,129 +126,121 @@ export default function Roadmap() {
                     </div>
                     <div class="timeline-content">
                     <i class="icon-code"></i>
-                    <img className = 'icon-code img-fluid rounded' src={laserEyes}/>
+                    {/* <img className = 'icon-code img-fluid rounded' src={laserEyes}/> */}
+                    <RoadMapPreview images={parallelImages} />
                       <h4>Parallel Worlds</h4>
                       <p>
-                      An amazing 1 of 1 art project done by Spotti and launched by Area47. The first of many!
+                      An amazing 1 of 1 art project painted by Spotti and launched by Area47. The first of many!
                       </p>
+
+                      <p> <b>Physical original paintings available on request on our discord</b></p>
+
+                      <a class="buyHere" target="_blank" rel="noreferrer" href='https://app.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe'>Buy</a>
                       {/* <div class="thumbs">
                         <div class="thumbs">
                       </div>
                       </div> */}
                       <div class="">
                         <span class="badge badge-pill">Spotti</span>
-                        <span class="badge badge-pill">1 of 1</span>
+                        <span class="badge badge-pill">1:1 Art</span>
+                        <span class="badge badge-pill">Physical</span>
                       </div>
                     </div>
                   </div>
               
                   <div class="timeline-row">
                     <div class="timeline-time">
-                      <large>2nd ClassC Collection</large>
+                      <large>ClassC Phase 2</large>
                     </div>
                     <div class="timeline-content">
                       <i class="icon-turned_in_not"></i>
-                      <h4>ClassC the New Era</h4>
-                      <p>This collection features brand new utilities such as the Elixer cats, 10 original 1 of 1s and sub-Comitees</p>
-                      <p>Thank you to all of you!! We literally could not have done it without you!!</p>
+                      <h4>ClassC A New Era</h4>
+                      <ul>
+                        <li>Ten 1 of 1 cats</li>
+                        <li>Crowned cats</li>
+                        <li>Elixer cat brewing</li>
+                        <li>Sub-commitees</li>
+                        <li>Gaming tournaments</li>
+                      </ul>
+                      {/* <p>This collection features brand new utilities such as the Elixer cats, 10 original 1 of 1s and sub-Comitees. We also implemented gaming tournaments and </p> */}
+                      {/* <p>Crowned cats and wizzard hats, come visit South Africa and much more than only that.</p> */}
                       <div>
-                        <span class="badge badge-pill">Thank you</span>
-                        <span class="badge badge-pill"></span>
+                        <span class="badge badge-pill">1:1s</span>
+                        <span class="badge badge-pill">Crowns</span>
+                        <span class="badge badge-pill">Gaming</span>
                       </div>
                     </div>
                   </div>
               
                   <div class="timeline-row">
                     <div class="timeline-time">
-                      <large>bye-bye halfway mark!</large>
+                      <large>Autumn Mini Set</large>
                     </div>
                     <div class="timeline-content">
                       <i class="icon-directions"></i>
-                      <h4>60% Minted</h4>
-                      <p>Airdrop random holders a Classified Cat! <b>WOW!</b></p>
+                      <h4>ClassC Autumn Set</h4>
+
+                      <ul>
+                        <li>Drops for holders of 3 or more phase 2 ClassC NFTs.</li>
+                        <li>Rare ghost cats for crowned cats, Whales and 1:1 holders</li>
+                      </ul>
+                      <a class="buyHere" target="_blank" rel="noreferrer" href='https://app.stargaze.zone/launchpad/stars1a62akq3au3m58ya3860su3weldumppwse4hktt7vgqxtdm7cu7nshy98ht'>Buy</a>
+                      {/* <div class="thumbs">
+                      
+                      {/* <p></p> */}
                       <div>
+                        <span class="badge badge-pill">Rare Drops</span>
                         <span class="badge badge-pill">Airdrops</span>
-                        <span class="badge badge-pill"></span>
                       </div>
                     </div>
                   </div>
-              
+
                   <div class="timeline-row">
                     <div class="timeline-time">
-                      <large>So close to the end! Let's GO!!</large>
-                    </div>
-                    <div class="timeline-content">
-                      <i class="icon-change_history"></i>
-                      <h4>80% Minted</h4>
-                      <p class="no-margin">Increase number of weekly random stake drops</p>
-                      <div class="thumbs">
-                      </div>
-                      <div>
-                        <span class="badge badge-pill">More Rewards</span>
-                        <span class="badge badge-pill"></span>
-                      </div>
-                    </div>
-                  </div>
-              
-                  <div class="timeline-row">
-                    <div class="timeline-time">
-                      <large>We did it together!!</large>
+                      <large>1:1 Art Set</large>
                     </div>
                     <div class="timeline-content">
                       <i class="icon-code"></i>
-                      <h4>100% Minted</h4>
+                      <h4>Neo Animalia</h4>
                       <p>
-                        Sneak Peek of Legendary Classified Cats NFT.
-                       There will be 47 Legendary 1 of 1 Classified Cats released after the initial cats have been minted.
+                      This special set features Animals native to South Africa in combination with gaming peripherals.
                       </p>
                       <p>
-                        Huge treasure hunt to discover what happened at the Area47 research facility with large prize pool up for grabs.
+                        This set is digital, but is high resolution and will look wonderful when printed and put on a wall.
                       </p>
-                      <p>
-                        Stake drops continue until our next project launches <b>(This date cannot be confirmed at this stage).</b>
-                      </p>
-                      <p>
-                        Some holders will be whitelisted for the next project based on specific conditions and a snap shot period.
-                      </p>
-                      <p>
-                        We are planning to give to non-profit organizations using an allocation set aside, from the project launch date,
-                        for this specifically. The world is in need of some love and hope, and we believe that our community has a lot of potential
-                        to help in areas where it is most needed. Details will be discussed at a later stage and we will invite holders to join in on
-                        these discussions.
-                      </p>
+                      <p><b>Give your gaming room some extra digital vibe</b></p>
                       <div class="thumbs">
                       </div>
                       <div class="">
-                        <span class="badge badge-pill">Sneak Peek</span>
-                        <span class="badge badge-pill">Whitelists</span>
-                        <span class="badge badge-pill">NPO</span>
+                        <span class="badge badge-pill">Siren</span>
+                        <span class="badge badge-pill">1:1 Art</span>
+                        <span class="badge badge-pill">Digital</span>
+                        <span class="badge badge-pill">Whitelist</span>
                       </div>
                     </div>
                   </div>
               
-                 <div class="timeline-row">
+                  <div class="timeline-row">
                     <div class="timeline-time">
-                      <large>Future</large>
+                      <large>1:1 Art Set</large>
                     </div>
-                     <div class="timeline-content">
-                      <i class="icon-attachment"></i>
-                      <h4>More.. Much More</h4>
-                      <p>
-                        We will be working on developing more utilities, but for now none are certain. 
-                      </p>
+                    <div class="timeline-content">
+                      <i class="icon-change_history"></i>
+                      <h4>Dinosaurs: XVII Century</h4>
+                      <p class="no-margin">How would XVII Italy look like if dinosaurs roamed these landscapes? </p> 
+                      <p> This set was painted in monotone fashion, because they obviously didn't have colour cameras in the XVII century... </p>
+                      <p> This set was once again done by the amazing Spotti. <b>Physical original paintings available on request on our discord</b></p>
                       <div class="thumbs">
-
                       </div>
-                      <div class="">
-                        <span class="badge badge-pill">Opportunity</span>
-
+                      <div>
+                        <span class="badge badge-pill">Spotti</span>
+                        <span class="badge badge-pill">1:1 Art</span>
+                        <span class="badge badge-pill">Physical</span>
                       </div>
                     </div>
                   </div>
-              
               
                 </div>
-              </div>
 
           </section>
     </>

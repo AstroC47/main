@@ -3,18 +3,29 @@
     align-items: center;
 }
 
-#navbar {
+/* #navbar {
     display:flex;
     align-items: center;
     justify-content: space-around;
     overflow: hidden;
     background-color: rgb(34, 33, 33);
     z-index: 100;
+  } */
+
+  #navbar {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    background-color: rgb(34, 33, 33);
+    z-index: 100;
+    position:sticky;
+    top: 0;
   }
   
   /* Navbar links */
   #navbar a {
-    
+
     float: left;
     display: block;
     color: #f2f2f2;
@@ -44,3 +55,23 @@
     display:flex;
     align-items: center;
 }
+
+.App-logo{
+  margin: 0 px 0 1px;
+  align-self: flex-start;
+}
+
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 5s linear;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }

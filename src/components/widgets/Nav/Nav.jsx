@@ -4,6 +4,7 @@ import tlogo from '../../../media/2021 Twitter logo - white.png';
 import dlogo from '../../../media/Discord-Logo-White.png';
 import klogo from '../../../media/keplrLogo.webp';
 import './Nav.css';
+// import './nav.js';
 
 import {Link} from 'react-router-dom'
 
@@ -17,10 +18,9 @@ export default function Nav(props) {
   return (
     <> 
     
-
     <nav id="navbar"className="navbar navbar-expand-md navbar-dark ">
         <div className="container-fluid">
-          <Link to='/'><img src= {logo} alt="Area47 Banner" width="40" height="40"/></Link>
+          <Link to='/'><img className='App-logo'src= {logo} alt="Area47 Logo" width="40" height="40"/></Link>
           {/* <a className="navbar-brand" href="#"> <img src= {logo} alt="Area47 Banner" width="40" height="40"/></a> */}
           
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +29,6 @@ export default function Nav(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              
-              <li className="nav-item">
-                <a className="nav-link" href="#timeline">Area47 Projects</a>
-              </li>
 
               <li className="nav-item">
                 <Link to='/gallery'>
@@ -42,10 +38,20 @@ export default function Nav(props) {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="gaming">Gaming</a>
+              <Link to='/gaming'>
+                  {/* <a className="nav-link" href="#timeline">Gallery</a> */}
+                  Gaming
+                </Link>
               </li>
 
               <li className="nav-item">
+              <Link to='/create'>
+                  {/* <a className="nav-link" href="#timeline">Gallery</a> */}
+                  Create With US
+                </Link>
+              </li>
+              <li className="nav-item">
+
               <Link to='/about'>
                   {/* <a className="nav-link" href="#timeline">Gallery</a> */}
                   About

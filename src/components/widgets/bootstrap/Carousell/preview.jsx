@@ -14,9 +14,9 @@ export default function preview() {
     <div class="carousel-item active">
       <img src= { prev } class="d-block w-100" alt="First slide"/>
     </div>
-    <div class="carousel-item">
+    {/* <div class="carousel-item">
       <img class="d-block w-100" src= { prev1 } alt="Second slide"/>
-    </div>
+    </div> */}
     <div class="carousel-item">
       <img class="d-block w-100" src= { prev } alt="Third slide"/>
     </div>
