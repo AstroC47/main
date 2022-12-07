@@ -6,15 +6,17 @@ export default function CollectionShowCase(props) {
   let preview_URL = null;
 
 const getImg = async() =>{
-  preview_URL = await getNftImage(props.prevImg,props.tokenId,".png")
-  const key = '.'+props.name
+  preview_URL = await getNftImage(props.prevImg,props.tokenId,props.format)
+  const key = '.'+props.id
   const prev = document.querySelector(key)
   // console.log(`.${props.name}`)
   prev.src = preview_URL
-  console.log(prev.src)
-
 }
-  // getImg()
+
+const nftClick = () =>{
+
+console.log(props.name)
+}
 
   useEffect(function() {
     getImg()
@@ -22,12 +24,12 @@ const getImg = async() =>{
 
   return (
     <>
-    <div className="showCaseMain">
-        <div className="nftPreview">
-            <img className={`${props.name}`} src={preview_URL} alt= 'img' width="100" height="100"/>
+    <div className="showCaseMain" onClick={nftClick}>
+        <div className="nftPreview" >
+            <img className={`${props.id}`} src={preview_URL} alt= 'img' width="100" height="100"/>
         </div>
         <div className="actions">
-            {props.price}
+            {props.name}
         </div>
     </div>
     </>

@@ -1,68 +1,68 @@
 import React, {useEffect, useState} from 'react'
 import Header from '../../widgets/Header/Header.jsx'
-import GalleryLayout from '../../widgets/Gallery/GalleryLayout.jsx'
-import Search from '../../widgets/Gallery/GallerySearch.jsx'
 import GalleryList from '../../widgets/Gallery/GalleryList.jsx'
-
+import { Link, Outlet, useSearchParams } from "react-router-dom"
+import './Gallery.css'
 
 export default function Gallery(props) {
-  
-const [nftData,setNftData] = useState([]);
 
-const TestData = [
-  {
-  key: 0,
-  name: "ohWOW",
-  ticker: "STARS",
-  price: 10000,
-  prevImg: "bafybeieiqnrnvah6o6vyhq5cucr6b35i42gdi7lyqvxv5fperijz5r6rou/images",
-  tokenId: '100'
-},{
-  key: 1,
-  name: "ohWOW2",
-  ticker: "STARS",
-  price: 10000,
-  prevImg: "bafybeieiqnrnvah6o6vyhq5cucr6b35i42gdi7lyqvxv5fperijz5r6rou/images",
-  tokenId: '2'
-}
-];
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [checkNft,setCheckNft] = useState('true')
+  const [searchValue,setSearchValue] = useState(searchParams.get('search'))
 
-const componentDidMount = ()=>{
-  const N = [{n:1}]
-
-  const nftDBData = N.map(function(N){
-    const M = N
-    return{
-      key: M.n,
-      name: "ohWOW",
-      ticker: "STARS",
-      price: 10000,
-      prevImg: "hi"
-    };
-    
-  })
-    console.log(nftDBData)
-    setNftData(nftDBData);
-    console.log(nftData)
-}
-
-
-
-useEffect(function() {
-  if (nftData.length === 0){
-    componentDidMount();
-  } else {
-
+  const handleSearch = () => {
+    const searchBox = document.querySelector(".searchInput")
+    if (searchBox.value.length>0){
+    setSearchValue(searchBox.value)
+    setSearchParams({search: searchBox.value})
   }
-})
-
+  }
 
   return (
     <>
     <Header/>
-    <Search/>
-    {/* <GalleryLayout nftData={TestData}/> */}
-    <GalleryList/>
+    
+    <div className="mainShowcaseArea">
+        <div className="showCaseArea">
+          <div className="blockBorder">
+            <div className="showCaseArea blankLite">
+              
+                <div className="searchActions">
+
+                  <div className="searchArea">
+                    <input className="searchInput"/>
+                    <button className= "searchButton" onClick={handleSearch}>Search</button>
+                  </div>
+                  
+                  
+                  <div className="searchButtons">
+
+                    <div className="check">
+                      <input type="checkbox" id="collectionCheck" defaultChecked="true"/>
+                      <label> Collections </label>
+                    </div>
+
+                    <div className="check">
+                      <input type="checkbox" id="nftCheck" defaultChecked="true"/>
+                      <label> NFTs </label>
+                    </div>
+
+                    <div className="check">
+                      <input type="checkbox" id="ArtistCheck" defaultChecked="true"/>
+                      <label> Artist </label>
+                    </div>
+
+                  </div>
+
+                </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+    {/* <Outlet context = {{searchValue:searchValue}}/> */}
+    <GalleryList />
     </>
   )
 }

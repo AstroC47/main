@@ -10,7 +10,7 @@ export default function RoadMapPreview(props) {
 
   return (
     <div id="carouselExampleIndicators1" className="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
+  <ol className="carousel-indicators">
         {
         props.images.map( ({n, name, image}) => 
         <li data-target="#carouselExampleIndicators1" key = {n} data-slide-to={n} className={`${name?"active":""}`}></li>)

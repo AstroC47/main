@@ -10,6 +10,8 @@
     flex-direction: column;
     align-items: center;
     background: -moz-linear-gradient(45deg, #e355ff 0%, #318aff 75%);
+    background: -webkit-linear-gradient(100deg,#e355ff 0%, #318aff 75%); 
+    background: -webkit-linear-gradient(100deg,#e355ff 0%, #318aff 75%);
 }
 
 .service{
@@ -23,6 +25,7 @@
 h3{
     color: #1bffd9;
 }
+
 p{
     color: #e9e9e9;
 }

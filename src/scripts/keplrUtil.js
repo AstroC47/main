@@ -1,4 +1,4 @@
-import {  SigningCosmWasmClient} from "cosmwasm";
+import { SigningCosmWasmClient } from "cosmwasm";
 
 const config = {
     chainId: "stargaze-1",

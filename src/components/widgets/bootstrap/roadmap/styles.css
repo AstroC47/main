@@ -91,9 +91,9 @@ section{
   justify-content: center;
   padding-top: 2vw;
   padding-bottom: 2vw;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  overflow: hidden;  /* Takes away white areas between sections*/
+  /* padding-left: 10vw;
+  padding-right: 10vw; */
+  overflow: hidden;  /*Takes away white areas between sections */
 }
 
 /* .preview-holder{

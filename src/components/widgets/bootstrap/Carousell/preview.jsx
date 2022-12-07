@@ -1,33 +1,39 @@
 import React from 'react'
 import prev from '../../../../media/ClassCHD.png'
 import prev1 from '../../../../media/previewLrg.webp'
+import prev2 from '../../../../media/Neo Animalia Banner.jpg'
 
 export default function preview() {
+
+  const previewClick = (e) => {
+    console.log(e.target.alt)
+  }
+
   return (
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+  <ol className="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src= { prev } class="d-block w-100" alt="First slide"/>
+  <div className="carousel-inner">
+    <div className="carousel-item active" >
+      <img src= { prev2 } className="d-block w-100" alt="ClassC" onClick={previewClick}/>
     </div>
-    {/* <div class="carousel-item">
-      <img class="d-block w-100" src= { prev1 } alt="Second slide"/>
-    </div> */}
-    <div class="carousel-item">
-      <img class="d-block w-100" src= { prev } alt="Third slide"/>
+    <div className="carousel-item">
+      <img className="d-block w-100" src= { prev2 } alt="Parallel Worlds"/>
+    </div>
+    <div className="carousel-item">
+      <img className="d-block w-100" src= { prev2 } alt="Neo Animalia"/>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+  <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+  <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="sr-only">Next</span>
   </a>
 </div>
 

@@ -9,6 +9,7 @@ import { useMoralisCloudFunction } from "react-moralis";
 import DbCall from './components/widgets/cloud/dbCall';
 import Home from './components/pages/Home/Home'
 import Gallery from './components/pages/Gallery/Gallery'
+import GalleryList from './components/widgets/Gallery/GalleryList.jsx'
 import Dashboard from './components/pages/Dashboard/Dashboard'
 import About from './components/pages/About/About'
 import Gaming from './components/pages/Gaming/Gaming'
@@ -77,8 +78,7 @@ export default function App() {
             <Route index element={<Home/>} />
             
               <Route path='gallery' element={<Gallery/>}>
-              <Route path=':Collection' element={<Gallery/>}/>
-                </Route>
+              </Route>
                 
               <Route path='gaming' element= {<Gaming/>} />
               <Route path='about' element={<About/>}/>

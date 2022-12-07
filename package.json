@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "cosmwasm": "^1.1.1",
+    "firebase": "^9.13.0",
     "moralis-v1": "^1.11.0",
     "path": "^0.12.7",
     "react": "^18.2.0",

@@ -31,7 +31,7 @@ export default function Nav(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
               <li className="nav-item">
-                <Link to='/gallery'>
+                <Link to='/gallery/?search=Anim'>
                   {/* <a className="nav-link" href="#timeline">Gallery</a> */}
                   Gallery
                 </Link>
@@ -62,23 +62,23 @@ export default function Nav(props) {
               
 
               
-                                 {/* <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                 {/* <li className="nav-item dropdown">
+                                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                   </a>
-                                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="#">Action</a></li>
+                                    <li><a className="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr className="dropdown-divider"></li>
+                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
                                   </ul>
                                 </li>
-                                <li class="nav-item">
-                                  <a class="nav-link disabled">Disabled</a>
+                                <li className="nav-item">
+                                  <a className="nav-link disabled">Disabled</a>
                                 </li>  */}
             </ul>
             <div className="d-flex">
-                                {/* <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> */}
+                                {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"> */}
                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
               <li className="nav-item">
@@ -93,7 +93,7 @@ export default function Nav(props) {
                    <a className="nav-link active" aria-current="page" href="https://discord.gg/rf8azByFbG" target="_blank"><img src={dlogo} width="30"alt=""/></a>
               </li>
                               
-              {/* <button class="btn btn-outline-primary" type="submit">Connect</button>  */}
+              {/* <button className="btn btn-outline-primary" type="submit">Connect</button>  */}
             </ul>
           </div>
           </div>
