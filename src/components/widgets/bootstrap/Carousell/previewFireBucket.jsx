@@ -3,12 +3,24 @@ import prev from '../../../../media/ClassCHD.png'
 import prev1 from '../../../../media/previewLrg.webp'
 import prev2 from '../../../../media/Parallel Worlds Banner.png'
 import prev3 from '../../../../media/Neo Animalia Banner web.png'
+import fireDB, { initializeFireDB, initStorage, readDoc, searchAll } from '../../../../scripts/fireDB'
+
 
 export default function preview() {
+
+  const init = async () =>  {
+  const url = await initStorage();
+  console.log(url)
+
+    const img = document.getElementById('myimg');
+    img.setAttribute('src', url);
+  }
 
   const previewClick = (e) => {
     console.log(e.target.alt)
   }
+
+  init()
 
   return (
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">

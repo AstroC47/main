@@ -10,6 +10,7 @@ import DbCall from './components/widgets/cloud/dbCall';
 import Home from './components/pages/Home/Home'
 import Gallery from './components/pages/Gallery/Gallery'
 import GalleryList from './components/widgets/Gallery/GalleryList.jsx'
+import Basicgallery from './components/pages/Gallery/Basicgallery.jsx'
 import Dashboard from './components/pages/Dashboard/Dashboard'
 import About from './components/pages/About/About'
 import Gaming from './components/pages/Gaming/Gaming'
@@ -17,8 +18,6 @@ import Create from './components/pages/Create/Create'
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 export default function App() {
-
-  
 
   let [address,setAddress] = useState(0);
 
@@ -77,7 +76,7 @@ export default function App() {
           <Route path="/" >
             <Route index element={<Home/>} />
             
-              <Route path='gallery' element={<Gallery/>}>
+              <Route path='gallery' element={<Basicgallery/>}>
               </Route>
                 
               <Route path='gaming' element= {<Gaming/>} />

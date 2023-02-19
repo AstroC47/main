@@ -24,9 +24,7 @@ export default function About() {
     text={'We are a small team building the future of web3 entering the space through the NFT market.We aim to build and provide valuable cross chain projects'}/>
 
 
-    <p>Our current goals are to promote 1:1 Art in the NFT space and in this way help artists around 
-      the world to be seen by potential buyers on the NFT market. We are also building a competitive 
-      gaming platform for mainstream games.</p>
+    
     </>
   )
 }

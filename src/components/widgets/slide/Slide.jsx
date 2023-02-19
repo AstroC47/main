@@ -3,6 +3,8 @@ import "./slide.css"
 
 export default function Slide(props) {
 
+const name = props.name
+
 const [init,setInit] = useState(false)
 
 const images = props.images
@@ -19,10 +21,10 @@ let scrollWidth = null;
 const componentDidMount = () =>{
 
   setInit(true)
-  slider = document.querySelector(".slider");
-  image = document.querySelectorAll(".sliderImage");
-  firstImage = slider.querySelectorAll(".sliderImage")[0];
-  arrowIcons = document.querySelectorAll(".sliderWrapper i")
+  slider = document.querySelector(".slider"+name);
+  image = document.querySelectorAll(".sliderImage"+name);
+  firstImage = slider.querySelectorAll(".sliderImage"+name)[0];
+  arrowIcons = document.querySelectorAll(".sliderWrapper"+name+" i")
 
   slider.addEventListener("mousedown",dragStart);
   slider.addEventListener("mousemove",dragging);
@@ -34,22 +36,42 @@ const componentDidMount = () =>{
   slider.addEventListener("touchend",dragStop);
 
   scrollWidth =  slider.scrollWidth - slider.clientWidth;
-  console.log(scrollWidth)
 
   arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
       slider.scrollLeft += icon.id == "left" ? -firstImageWidth : firstImageWidth
       firstImageWidth = (firstImage.clientWidth + 14);
-      console.log(firstImageWidth)
-      // setTimeout(() => showHideIcons(),60);
+      let amountOfFrames = (Math.abs(Math.round(slider.scrollLeft / firstImageWidth)));
+
+      if (slider.scrollLeft%firstImageWidth != 0){
+        slider.scrollLeft = amountOfFrames*firstImageWidth
+      }
+      const sliderBodyWidth = document.querySelector(".sliderBody"+name).clientWidth
+      console.log('sliderBody width', sliderBodyWidth)
+      console.log('images Width',firstImageWidth*6)
+      console.log('slider scroll left', slider.scrollLeft)
+      console.log('first img width 6.5', firstImageWidth*3.5)
+
+      if ((sliderBodyWidth <= firstImageWidth) && (slider.scrollLeft >= firstImageWidth*8.5)){
+      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    } else if ((sliderBodyWidth <= firstImageWidth*2) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*7.5)){
+      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    } else if ((sliderBodyWidth <= firstImageWidth*3) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*6.5)){
+      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    } else if ((sliderBodyWidth <= firstImageWidth*4) && (sliderBodyWidth > firstImageWidth*3.5) && (slider.scrollLeft >= firstImageWidth*5.5)){
+      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    } else if ((sliderBodyWidth <= firstImageWidth*5) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*4.5)){
+      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    }else if ((sliderBodyWidth > firstImageWidth*5) && (slider.scrollLeft >= firstImageWidth*3.5)){
+      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    }
+
     })
   })
   
   for (let i = 0; i < image.length; i++) {
     image[i].addEventListener("mouseup",openImage);
   }
-
-  console.log("loaded")
 
 }
 
@@ -88,7 +110,7 @@ const dragStop = () => {
 const openImage = (e) => {
   if (clickable == true){
   e.preventDefault()
-  console.log(e.target.src)
+  // console.log(e.target.src)
 }
 }
 
@@ -104,18 +126,20 @@ const autoSlide = () => {
   positionDiff = Math.abs(positionDiff)
   let firstImageWidth = firstImage.clientWidth + 14;
   let valDifference = firstImageWidth - positionDiff;
-  let amountOfFrames = (Math.abs(Math.round(valDifference / firstImageWidth)));
+  // let amountOfFrames = (Math.abs(Math.round(valDifference / firstImageWidth)));
+  let amountOfFrames = (Math.abs(Math.round(slider.scrollLeft / firstImageWidth)));
 
   if (slider.scrollLeft > prevScrollLeft){
     slider.scrollLeft += positionDiff > firstImageWidth / 3 ? ((firstImageWidth * amountOfFrames) + valDifference) : -positionDiff
-    console.log(slider.scrollLeft) 
+    // console.log(slider.scrollLeft)
   } else {
     slider.scrollLeft -= positionDiff > firstImageWidth / 3 ? ((firstImageWidth * amountOfFrames) + valDifference) : -positionDiff
-    console.log(slider.scrollLeft)
+    // console.log(slider.scrollLeft)
   }
   
-  if (slider.scrollLeft != firstImageWidth){
-
+  if (slider.scrollLeft%firstImageWidth != 0){
+    // console.log('here', slider.scrollLeft/firstImageWidth)
+    slider.scrollLeft = amountOfFrames*firstImageWidth
   }
 }
 
@@ -130,15 +154,15 @@ useEffect(function() {
 
   return (
     <>
-    <div className="sliderBody">
-        <div className="sliderWrapper">
+    <div className={`sliderBody${name} sliderBody`}>
+        <div className={`sliderWrapper${name} sliderWrapper`}>
             <i id="left" className="fa-solid fa-angle-left"></i>
-            <div className="slider">
+            <div className={`slider${name} slider`}>
 
             {images.map(({imageLink,id}) =>
             {
                 return(
-                <img className="sliderImage" key={id} src={imageLink} alt="img" />
+                <img className={`sliderImage${name} sliderImage`} key={id} src={imageLink} alt="img" />
             )}
             )}
 
@@ -146,7 +170,6 @@ useEffect(function() {
             <i id = "right" className="fa-solid fa-angle-right"></i>
         </div>
     </div>
-    <script src='./slide.js'></script>
     </>
   )
 }

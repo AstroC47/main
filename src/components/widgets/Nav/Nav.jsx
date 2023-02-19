@@ -31,7 +31,10 @@ export default function Nav(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
               <li className="nav-item">
-                <Link to='/gallery/?search=Anim'>
+                {/* <Link to='/gallery/?search=Anim'> */}  
+                {/* For the fancy one ^^^  */}
+
+                <Link to='/gallery'>
                   {/* <a className="nav-link" href="#timeline">Gallery</a> */}
                   Gallery
                 </Link>

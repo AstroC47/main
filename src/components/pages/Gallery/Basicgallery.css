@@ -1,0 +1,42 @@
+.slideHeading{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.slideHeading p{
+    display: flex;
+    border: 0;
+    margin: 0;
+}
+
+.slideHeadingLeft p b{
+    color: rgb(0, 217, 255);
+    font-size: 20px;
+    border: 0;
+    margin: 0;
+}
+
+.slideHeadingRight p b{
+    color: rgb(226, 108, 255);
+    font-size: 20px;
+    border: 0;
+    margin: 0;
+}
+
+.artHeading{
+    width: 70vw;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.serviceHeading{
+    width: 70vw;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1{
+    color: rgb(0, 255, 115);
+}

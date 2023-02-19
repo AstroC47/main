@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, doc, getDocs, getDoc, setDoc, where, query } from "firebase/firestore"; 
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
 
@@ -76,4 +77,26 @@ const readDoc = async (db, collectionName) => {
 
   }
 
-  export {readDoc, initializeFireDB, searchAll};
+  const initStorage = async () => {
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+    // const storageRef = ref(storage);
+    // const gsReference = ref(storage, 'gs://bucket/Neo Animalia Banner web-01.png');
+    let imgUrl 
+
+    const getUrl = getDownloadURL(ref(storage, 'Neo Animalia Banner.webp'))
+    
+    try {
+      imgUrl = await getUrl;
+    } catch (error){
+      console.log(error)
+    }
+
+
+    // const img = document.getElementById('myimg');
+    // img.setAttribute('src', url);
+
+    return imgUrl
+  }
+
+  export {readDoc, initializeFireDB, searchAll, initStorage};

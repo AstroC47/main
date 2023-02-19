@@ -2,8 +2,10 @@ import React from 'react'
 import './area47Styles.css'
 import './styles.css'
 import './timelineStyles.css'
+import pw1 from '../../../../media/pw preview 1 640.png'
+import pw2 from '../../../../media/pw preview 2 640.png'
+import pw3 from '../../../../media/pw preview 3 640.png'
 import laserEyes from '../../../../media/10.webp'
-import parallel from '../../../../media/8.webp'
 import RoadMapPreview from '../Carousell/RoadMapPreview.jsx'
 
 export default function Roadmap() {
@@ -12,12 +14,17 @@ export default function Roadmap() {
     {
     n: '0',
     name:true,
-    image: parallel
+    image: pw1
   },
   {
     n: '1',
     name:false,
-    image: laserEyes
+    image: pw2
+  },
+  {
+    n: '2',
+    name:false,
+    image: pw3
   }
 ]
 
@@ -92,8 +99,12 @@ export default function Roadmap() {
                       <div className='large'>Genesis Project</div>
                     </div>
                     <div className="timeline-content">
-                      <i className="icon-code"></i>
+                      {/* <i className="icon-code"></i> */}
+
+                      
                       <img className = 'img-fluid rounded' src={laserEyes}/>
+
+                            <div className="writeSpace">
                       <h4>Classified Cats</h4>
                       <p>
                       Classified Cats was the first project launched by Area47 on the stargaze network. 
@@ -116,6 +127,8 @@ export default function Roadmap() {
                         <span className="badge badge-pill">Staking Rewards</span>
                         <span className="badge badge-pill">Discord</span>
                         <span className="badge badge-pill">Twitter</span>
+                        
+                                      </div>
                       </div>
                     </div>
                   </div>
@@ -127,7 +140,9 @@ export default function Roadmap() {
                     <div className="timeline-content">
                     <i className="icon-code"></i>
                     {/* <img className = 'icon-code img-fluid rounded' src={laserEyes}/> */}
-                    <RoadMapPreview images={parallelImages} />
+                    <RoadMapPreview images={parallelImages} name={'1'} />
+                    {/* <RoadMapPreview images={parallelImages} /> */}
+                                  <div className="writeSpace">
                       <h4>Parallel Worlds</h4>
                       <p>
                       An amazing 1 of 1 art project painted by Spotti and launched by Area47. The first of many!
@@ -144,6 +159,7 @@ export default function Roadmap() {
                         <span className="badge badge-pill">Spotti</span>
                         <span className="badge badge-pill">1:1 Art</span>
                         <span className="badge badge-pill">Physical</span>
+                                      </div>
                       </div>
                     </div>
                   </div>

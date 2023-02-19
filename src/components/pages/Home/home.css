@@ -91,3 +91,13 @@
     width: 90%;
     border-radius: 15px;
   }
+
+  .writeSpace{
+    background-color: rgb(46, 46, 46);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
