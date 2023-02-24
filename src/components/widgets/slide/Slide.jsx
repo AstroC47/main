@@ -26,6 +26,8 @@ const componentDidMount = () =>{
   firstImage = slider.querySelectorAll(".sliderImage"+name)[0];
   arrowIcons = document.querySelectorAll(".sliderWrapper"+name+" i")
 
+  const nftCount = image.length
+
   slider.addEventListener("mousedown",dragStart);
   slider.addEventListener("mousemove",dragging);
   slider.addEventListener("mouseup",dragStop);
@@ -39,33 +41,41 @@ const componentDidMount = () =>{
 
   arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
-      slider.scrollLeft += icon.id == "left" ? -firstImageWidth : firstImageWidth
       firstImageWidth = (firstImage.clientWidth + 14);
+      slider.scrollLeft += icon.id == "left" ? -firstImageWidth : firstImageWidth
       let amountOfFrames = (Math.abs(Math.round(slider.scrollLeft / firstImageWidth)));
+      // autoSlide()
 
-      if (slider.scrollLeft%firstImageWidth != 0){
-        slider.scrollLeft = amountOfFrames*firstImageWidth
-      }
-      const sliderBodyWidth = document.querySelector(".sliderBody"+name).clientWidth
-      console.log('sliderBody width', sliderBodyWidth)
-      console.log('images Width',firstImageWidth*6)
-      console.log('slider scroll left', slider.scrollLeft)
-      console.log('first img width 6.5', firstImageWidth*3.5)
+      // if (slider.scrollLeft%firstImageWidth != 0){
+      //   slider.scrollLeft = amountOfFrames*firstImageWidth
+      // }
 
-      if ((sliderBodyWidth <= firstImageWidth) && (slider.scrollLeft >= firstImageWidth*8.5)){
-      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
-    } else if ((sliderBodyWidth <= firstImageWidth*2) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*7.5)){
-      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
-    } else if ((sliderBodyWidth <= firstImageWidth*3) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*6.5)){
-      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
-    } else if ((sliderBodyWidth <= firstImageWidth*4) && (sliderBodyWidth > firstImageWidth*3.5) && (slider.scrollLeft >= firstImageWidth*5.5)){
-      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
-    } else if ((sliderBodyWidth <= firstImageWidth*5) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*4.5)){
-      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
-    }else if ((sliderBodyWidth > firstImageWidth*5) && (slider.scrollLeft >= firstImageWidth*3.5)){
-      slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
-    }
+    //   const sliderBodyWidth = document.querySelector(".sliderBody"+name).clientWidth
+    //   console.log('')
+    //   console.log('sliderBody width', sliderBodyWidth)
+      // console.log('images Width',firstImageWidth)
+      // console.log('slider scroll left', slider.scrollLeft)
+    //   // console.log('first img width 6.5', firstImageWidth*0.40*nftCount)
 
+    //   if ((sliderBodyWidth <= firstImageWidth) && (slider.scrollLeft >= firstImageWidth*0.85*nftCount)){
+    //   slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    //   console.log('first img width 0.85', firstImageWidth*0.85*nftCount)
+    // } else if ((sliderBodyWidth <= firstImageWidth*2) && (sliderBodyWidth > firstImageWidth) && (slider.scrollLeft >= firstImageWidth*0.75*nftCount)){
+    //   slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    //   console.log('first img width 0.75', firstImageWidth*0.75*nftCount)
+    // } else if ((sliderBodyWidth <= firstImageWidth*3) && (sliderBodyWidth > firstImageWidth*2) && (slider.scrollLeft >= firstImageWidth*0.65*nftCount)){
+    //   slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    //   console.log('first img width 0.65', firstImageWidth*0.65*nftCount)
+    // } else if ((sliderBodyWidth <= firstImageWidth*4) && (sliderBodyWidth > firstImageWidth*3) && (slider.scrollLeft >= firstImageWidth*0.55*nftCount)){
+    //   slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    //   console.log('first img width 0.55', firstImageWidth*0.55*nftCount)
+    // } else if ((sliderBodyWidth <= firstImageWidth*5) && (sliderBodyWidth > firstImageWidth*4) && (slider.scrollLeft >= firstImageWidth*(nftCount-5.5))){
+    //   slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    //   console.log('first img width 0.45', firstImageWidth*0.45*nftCount)
+    // }else if ((sliderBodyWidth <= firstImageWidth*7) && (sliderBodyWidth > firstImageWidth*5) && (slider.scrollLeft >= firstImageWidth*(nftCount-6.5))){
+    //   console.log('first img width 0.35', firstImageWidth*0.35*nftCount)
+    //   slider.scrollLeft = (amountOfFrames-1)*firstImageWidth
+    // }
     })
   })
   
@@ -110,7 +120,7 @@ const dragStop = () => {
 const openImage = (e) => {
   if (clickable == true){
   e.preventDefault()
-  // console.log(e.target.src)
+  console.log(e.target.src)
 }
 }
 
@@ -157,12 +167,12 @@ useEffect(function() {
     <div className={`sliderBody${name} sliderBody`}>
         <div className={`sliderWrapper${name} sliderWrapper`}>
             <i id="left" className="fa-solid fa-angle-left"></i>
-            <div className={`slider${name} slider`}>
+            <div id={`slider${name}`} className={`slider${name} slider`}>
 
             {images.map(({imageLink,id}) =>
             {
                 return(
-                <img className={`sliderImage${name} sliderImage`} key={id} src={imageLink} alt="img" />
+                <img id ={`${name+id}`} className={`sliderImage${name} sliderImage`} key={id} src={''} alt="img" />
             )}
             )}
 

@@ -1,9 +1,12 @@
 import React,{ useEffect } from 'react'
 
-
 export default function RoadMapPreview(props) {
 
-  const name = props.name;  
+  const previewClick = (e) => {
+    console.log(e.target.alt)
+  }
+
+  const name = props.index;  
   
   // useEffect(function() {
     //   const sliders = document.querySelector('.carouselExampleIndicators1');
@@ -15,15 +18,15 @@ export default function RoadMapPreview(props) {
     <div id={`carouselExampleIndicators${name}`} className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">
         {
-        props.images.map( ({n, name, image}) => 
-        <li data-target={`#carouselExampleIndicators${name}`} key = {n} data-slide-to={n} className={`${name?"active":""}`}></li>)
+        props.images.map( ({n, active, image}) => 
+        <li data-target={`#carouselExampleIndicators${active}`} key = {n} data-slide-to={n} className={`${active?"active":""}`}></li>)
         }
   </ol>
 
   <div className="carousel-inner">
-  {props.images.map( ({n, name, image}) => 
-        <div key = {n}  className={`carousel-item ${name?"active":""}`}>
-        <img src= { image } className="d-block w-100" alt="slide"/>
+  {props.images.map( ({n, active, name, id}) => 
+        <div key = {n}  className={`carousel-item ${active?"active":""}`}>
+        <img id={id} className="d-block w-100" alt={`${name}`}  onClick={previewClick}/>
         </div>
     )
     }

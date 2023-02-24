@@ -8,32 +8,64 @@ import Infobox from '../../widgets/Infobox/Infobox.jsx'
 import Header from '../../widgets/Header/Header.jsx'
 import BorderInfoBox from '../../widgets/BorderInfoBox/BorderInfoBox.jsx'
 import Slide from '../../widgets/slide/Slide.jsx'
+import fireDB, { initializeFireDB, getImgUrl, readDoc, searchAll } from '../../../scripts/fireDB'
 
 import pw1 from '../../../media/pw preview 1 640.png'
 import pw2 from '../../../media/pw preview 2 640.png'
 import pw3 from '../../../media/pw preview 3 640.png'
 
+
+
 export default function Home(props) {
-const slideImages = [{imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/1.jpg",
+
+  const firebaseConfig = {
+
+    apiKey: 'AIzaSyDge2EqOTgNqqRXVLulr_xJLa3q9ALTHPo',
+  
+    authDomain: "area-5f012.firebaseapp.com",
+  
+    projectId: "area-5f012",
+  
+    storageBucket: "area-5f012.appspot.com",
+  
+    messagingSenderId: "200420597498",
+  
+    appId: "1:200420597498:web:de3172d82ddde9f2a63343",
+  
+  };
+
+
+const slideImages = [{imageLink:"",
                     id:1},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/2.jpg",
+                    {imageLink:"",
                     id:2},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/3.jpg",
+                    {imageLink:"",
                     id:3},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/4.jpg",
+                    {imageLink:"",
                     id:4},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/5.jpg",
+                    {imageLink:"",
                     id:5},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/6.jpg",
+                    {imageLink:"",
                     id:6},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/7.jpg",
+                    {imageLink:"",
                     id:7},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/8.jpg",
+                    {imageLink:"",
                     id:8},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/9.jpg",
+                    {imageLink:"",
                     id:9},
-                    {imageLink:"https://ipfs.io/ipfs/bafybeieepkuu54pppq2v5gpo3vkrl7t55wes7kdyireaz3tj7l7ry4z6pq/images/10.jpg",
+                    {imageLink:"",
                     id:10}]
+
+const loadImages = async () =>{
+let slideImages = []
+for (let i = 1; i < 11; i++) {
+  let img = document.getElementById('neo'+i);
+  img.setAttribute('src', await getImgUrl('Projects/neoAnimalia/'+i+'.webp'));
+}
+
+}
+
+
 
 
 const parallelImages = [
@@ -59,6 +91,7 @@ const parallelInfo = 'An amazing 1 of 1 art project painted by Spotti and launch
 
 
 useEffect(function() {
+  loadImages()
 // console.log("home")
 })
 

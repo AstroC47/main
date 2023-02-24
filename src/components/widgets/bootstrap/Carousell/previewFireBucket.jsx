@@ -1,23 +1,34 @@
 import React from 'react'
-import prev from '../../../../media/ClassCHD.png'
-import prev1 from '../../../../media/previewLrg.webp'
-import prev2 from '../../../../media/Parallel Worlds Banner.png'
-import prev3 from '../../../../media/Neo Animalia Banner web.png'
-import fireDB, { initializeFireDB, initStorage, readDoc, searchAll } from '../../../../scripts/fireDB'
+import fireDB, {getImgUrl} from '../../../../scripts/fireDB'
 
 
 export default function preview() {
 
   const init = async () =>  {
-  const url = await initStorage();
-  console.log(url)
+    let url = ''
+    let id = ''
+    let img = ''
 
-    const img = document.getElementById('myimg');
+    const homeBannerNumbers = ['1','2','1']
+
+    for (let i = 0; i < homeBannerNumbers.length; i++) {
+      id = i
+      id = id +1
+        url = await getImgUrl('homeBanner/'+homeBannerNumbers[i]+'.webp');
+      
+      toString(id)
+
+    img = document.getElementById('Prev'+id);
     img.setAttribute('src', url);
+      
+    }
+  
+    
   }
 
   const previewClick = (e) => {
-    console.log(e.target.alt)
+    console.log(e.target.name)
+    window.open(e.target.name, '_blank');
   }
 
   init()
@@ -31,16 +42,13 @@ export default function preview() {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active" >
-      <img src= { prev2 } className="d-block w-100" alt="ClassC" onClick={previewClick}/>
-    </div>
-    {/* <div className="carousel-item">
-      <img className="d-block w-100" src= { prev1 } alt="Parallel Worlds"/>
-    </div> */}
-    <div className="carousel-item">
-      <img className="d-block w-100" src= { prev2 } alt="Parallel Worlds"/>
+      <img id='Prev1' className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe' alt="ClassC" onClick={previewClick}/>
     </div>
     <div className="carousel-item">
-      <img className="d-block w-100" src= { prev3 } alt="Neo Animalia"/>
+      <img id='Prev2'className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe' alt="Parallel Worlds" onClick={previewClick}/>
+    </div>
+    <div className="carousel-item">
+      <img id='Prev3'className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe' alt="Neo Animalia" onClick={previewClick}/>
     </div>
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -13,7 +13,7 @@ export default function Roadmap() {
   const parallelImages = [
     {
     n: '0',
-    name:true,
+    name:'Parallel Worlds',
     image: pw1
   },
   {

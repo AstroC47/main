@@ -2,11 +2,13 @@ import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, doc, getDocs, getDoc, setDoc, where, query } from "firebase/firestore"; 
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { getStorage, ref, getDownloadURL, listAll  } from "firebase/storage";
+
+
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyDge2EqOTgNqqRXVLulr_xJLa3q9ALTHPo",
+    apiKey: 'AIzaSyDge2EqOTgNqqRXVLulr_xJLa3q9ALTHPo',
   
     authDomain: "area-5f012.firebaseapp.com",
   
@@ -77,14 +79,52 @@ const readDoc = async (db, collectionName) => {
 
   }
 
-  const initStorage = async () => {
+  const countNft =async (type, projectName) => {const app = initializeApp(firebaseConfig);
+
+    let mainFolder = ''
+
+    if (type == 'project') {
+      mainFolder = 'Projects/'
+    } else if (type == 'preview') {
+      mainFolder = 'preview'
+    } else if (type == 'banner'){
+      mainFolder = 'banner'
+    } else if (type == 'mainBanner') {
+      mainFolder = 'mainBanner'
+    }
+
+    const storage = getStorage(app);
+    const listRef = ref(storage, mainFolder+projectName);
+
+    const list = await listAll(listRef)
+
+    return list.items.length
+  }
+
+  // const listImageUrls = async (projectName,nftCount) => {
+
+  //   const app = initializeApp(firebaseConfig);
+  //   const storage = getStorage(app);
+  //   const listRef = ref(storage, 'Projects/'+projectName);
+  //   let imgList = []
+
+  //   const list = await listAll(listRef)
+
+  //   for (let i = 1; i <= nftCount; i++) {
+  //     const imgLink = await getImgUrl('Projects/'+projectName+'/'+i+'.webp')
+  //     imgList.push({id:i, name:projectName, imageLink:imgLink})
+  //   }
+  //   return imgList
+
+  // }
+
+  const getImgUrl = async (imgSource) => {
     const app = initializeApp(firebaseConfig);
     const storage = getStorage(app);
-    // const storageRef = ref(storage);
-    // const gsReference = ref(storage, 'gs://bucket/Neo Animalia Banner web-01.png');
+    
     let imgUrl 
 
-    const getUrl = getDownloadURL(ref(storage, 'Neo Animalia Banner.webp'))
+    const getUrl = getDownloadURL(ref(storage, imgSource))
     
     try {
       imgUrl = await getUrl;
@@ -92,11 +132,7 @@ const readDoc = async (db, collectionName) => {
       console.log(error)
     }
 
-
-    // const img = document.getElementById('myimg');
-    // img.setAttribute('src', url);
-
     return imgUrl
   }
 
-  export {readDoc, initializeFireDB, searchAll, initStorage};
+  export {readDoc, initializeFireDB, searchAll, getImgUrl, countNft};

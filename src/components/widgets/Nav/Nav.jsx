@@ -84,9 +84,9 @@ export default function Nav(props) {
                                 {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"> */}
                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                    <a className="nav-link active" aria-current="page" onClick={ handleClick } target="_blank"><img src={klogo} width="30"alt=""/></a>
-              </li>                   
+              </li>                    */}
 
               <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="https://twitter.com/area47base" target="_blank"><img src={tlogo} width="30"alt=""/></a>

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Infobox.css'
 import RoadMapPreview from '../bootstrap/Carousell/RoadMapPreview.jsx'
 import Slide from '../slide/Slide.jsx'
+import fireDB, {getImgUrl, countNfts} from '../../../scripts/fireDB'
 
 import pw1 from '../../../media/pw preview 1 640.png'
 import pw2 from '../../../media/pw preview 2 640.png'
@@ -9,23 +10,55 @@ import pw3 from '../../../media/pw preview 3 640.png'
 
 export default function Infobox(props) {
 
-    const parallelImages = [
-        {
-        n: '0',
-        name:true,
-        image: pw1
-      },
-      {
-        n: '1',
-        name:false,
-        image: pw2
-      },
-      {
-        n: '2',
-        name:false,
-        image: pw3
+  const loadImages = async (projectName) => {
+
+    for (let i = 1; i <= 3; i++) {
+      const imgLink = await getImgUrl('preview/'+projectName+'/'+i+'.webp')
+      console.log(imgLink)
+      console.log(projectName)
+
+      let img = document.getElementById(projectName+i);
+      img.setAttribute('src', imgLink);
+    }
+    
+  }
+
+    let parallelImages = []
+
+    for (let i = 1; i <= 3; i++) {
+
+      if (i == 1) {
+        console.log('true')
       }
-    ]
+      
+      parallelImages.push({n:i,id:'parallelWorlds'+i,active:(i==1?true:false)});
+      
+  }
+
+  useEffect(function() {
+    loadImages('parallelWorlds')
+  })
+
+    // const parallelImages = [
+    //     {
+    //     n: '0',
+    //     active:true,
+    //     name: "pw",
+    //     image: pw1
+    //   },
+    //   {
+    //     n: '1',
+    //     active:false,
+    //     name: "pw",
+    //     image: pw2
+    //   },
+    //   {
+    //     n: '2',
+    //     active:false,
+    //     name: "pw",
+    //     image: pw3
+    //   }
+    // ]
     
   return (
     <>
@@ -34,7 +67,7 @@ export default function Infobox(props) {
     <div className="infoBox blankLite">
         <div className="infoBoxGrid">
 
-            <div className="gridImage"><RoadMapPreview images={parallelImages} name={'1'} /></div>
+            <div className="gridImage"><RoadMapPreview images={parallelImages} index={'1'} /></div>
             
             <div className="gridInfo">
                 <div className="infoBoxHeader"> Classified Cats</div> 
@@ -67,7 +100,7 @@ export default function Infobox(props) {
                 <div className="extraInfo">Physical original paintings available on request on our discord</div>
             </div>
 
-            <div className="gridImage"><RoadMapPreview images={parallelImages} name={'2'} /></div>
+            <div className="gridImage"><RoadMapPreview images={parallelImages} index={'2'} /></div>
 
         </div>
 
@@ -82,7 +115,7 @@ export default function Infobox(props) {
     <div className="infoBox blankLite">
         <div className="infoBoxGrid">
 
-            <div className="gridImage"><RoadMapPreview images={parallelImages} name={'3'} /></div>
+            <div className="gridImage"><RoadMapPreview images={parallelImages} index={'3'} /></div>
 
             <div className="gridInfo">
                 <div className="infoBoxHeader">Parallel Worlds</div> 
