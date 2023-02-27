@@ -1,5 +1,5 @@
 import React from 'react'
-import typeLogo from '../../../media/TypeLogo.png';
+import typeLogo from '../../../media/TypeLogo.webp';
 import './Header.css';
 
 export default function Header() {

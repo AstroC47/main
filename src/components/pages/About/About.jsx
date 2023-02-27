@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from '../../widgets/Nav/Nav.jsx'
 import Header from '../../widgets/Header/Header.jsx'
 import './About.css'
 import BorderInfoBox from '../../widgets/BorderInfoBox/BorderInfoBox.jsx'
@@ -14,7 +13,6 @@ export default function About() {
 
   return (
     <>
-    {/* <Nav/> */}
     <Header/>
     <div>
         <BorderInfoBox header={'Welcome to Area47'} text={textForBio}/>

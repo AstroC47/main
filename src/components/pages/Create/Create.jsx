@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from'../../widgets/Nav/Nav.jsx'
 import Header from'../../widgets/Header/Header.jsx'
 import './create.css'
 import BorderInfoBox from '../../widgets/BorderInfoBox/BorderInfoBox.jsx'
@@ -27,7 +26,6 @@ export default function Create() {
 
   return (
     <>
-    {/* <Nav/> */}
     <Header/>
     
     <BorderInfoBox 

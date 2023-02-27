@@ -9,7 +9,7 @@ export default function preview() {
     let id = ''
     let img = ''
 
-    const homeBannerNumbers = ['1','2','1']
+    const homeBannerNumbers = ['1','2','3']
 
     for (let i = 0; i < homeBannerNumbers.length; i++) {
       id = i
@@ -42,13 +42,13 @@ export default function preview() {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active" >
-      <img id='Prev1' className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe' alt="ClassC" onClick={previewClick}/>
+      <img id='Prev1' className="d-block w-100" name='https://app.teritori.com/collection/tori-tori1rcmvfsn77pd6m04ctqj3wcu66pvrw9p265cdl72w4zarfup2rv7qnjklmn' alt="Neo Animalia" onClick={previewClick}/>
     </div>
     <div className="carousel-item">
       <img id='Prev2'className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe' alt="Parallel Worlds" onClick={previewClick}/>
     </div>
     <div className="carousel-item">
-      <img id='Prev3'className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars10w3rklmha7uk0tzn0yn8jrsfs4yqxyckvyatmeygexf74h2xfvlsppflhe' alt="Neo Animalia" onClick={previewClick}/>
+      <img id='Prev3'className="d-block w-100" name='https://www.stargaze.zone/launchpad/stars1a62akq3au3m58ya3860su3weldumppwse4hktt7vgqxtdm7cu7nshy98ht' alt="Classified Cats" onClick={previewClick}/>
     </div>
   </div>
   <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
