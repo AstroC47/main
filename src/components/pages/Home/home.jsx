@@ -39,7 +39,8 @@ useEffect(function() {
         </div>
       
       <div className="subHeadingSection">
-      <h2 className="subHeading"> Introducing our newest collection</h2>
+      <h2 className="subSubHeading"> Introducing our newest collection</h2>
+      <h1 className="subHeading"> <b>Neo Animalia</b></h1>
       </div>
 
       <div className="serviceInnerFlex">

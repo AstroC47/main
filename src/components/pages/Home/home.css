@@ -101,3 +101,7 @@
     flex-direction: column;
     width: 100%;
   }
+
+  .subSubHeading{
+    color: #00ffb3;
+  }

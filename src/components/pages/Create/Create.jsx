@@ -43,11 +43,6 @@ export default function Create() {
     text= {textForArt}
     />
 
-    <BorderInfoBox 
-    header= {'Run an Ad campaign on our website'}
-    text= {textForAds}
-    />
-
     </>
   )
 }

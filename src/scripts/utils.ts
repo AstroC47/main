@@ -1,5 +1,5 @@
 import { toBech32, fromBech32 } from 'cosmwasm';
-
+//////////////////////////////////////////////////////////////////////////// Placeholder code
 export const toStars = (addr: string) => {
   try {
     const { prefix, data } = fromBech32(addr);
@@ -19,16 +19,4 @@ export const toStars = (addr: string) => {
   } catch (e) {
     throw new Error('Invalid address: ' + addr + ',' + e);
   }
-};
-
-export const isValidHttpUrl = (uri: string) => {
-  let url;
-
-  try {
-    url = new URL(uri);
-  } catch (_) {
-    return false;
-  }
-
-  return url.protocol === 'http:' || url.protocol === 'https:';
 };

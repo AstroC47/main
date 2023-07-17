@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getAddres, getKeplrClient } from './scripts/keplrUtil.js'
+import { getAddress, getKeplrClient } from './scripts/keplrUtil.js'
 import './App.css';
 import Nav from './components/widgets/Nav/Nav.jsx'
 import Home from './components/pages/Home/Home'
@@ -17,7 +17,7 @@ export default function App() {
 
   const handleKepler = async () => {
     const client = await getKeplrClient();
-    const newAddress = await getAddres();
+    const newAddress = await getAddress();
     setAddress(newAddress)
   }
 
@@ -32,7 +32,7 @@ export default function App() {
               <Route path='gallery' element={<Basicgallery/>}>
               </Route>
                 
-              <Route path='gaming' element= {<Gaming/>} />
+              //<Route path='gaming' element= {<Gaming/>} />
               <Route path='about' element={<About/>}/>
               <Route path='create' element={<Create/>}/>
               

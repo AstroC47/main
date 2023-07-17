@@ -11,6 +11,7 @@ const getKeplrClient = async (config) => {
   // check browser compatibility
   if (!window.keplr) {
     throw new Error("Keplr is not supported or installed on this browser!");
+    window.alert("sometext");
   }
 
   // try to enable keplr with given chainId

@@ -45,7 +45,7 @@ export default function Basicgallery() {
 <div className="background">
         <div className="mainHome">
 
-            <h3> House of Area47 </h3>
+            <h1><b>House of Area47 Art</b></h1>
 
 
 <div className="serviceInnerFlex">

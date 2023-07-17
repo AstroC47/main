@@ -1,15 +1,12 @@
-module.exports = {
-    rpcEndpoint: 'https://rpc.stargaze-apis.com/',
-    // account: 'stars1rvu4yapuyvk0x3hcua7ntz9nn8h2505ajvf3kz',
-    account: 'stars1sqz3n8lfrn0yaqlc6rqaderrexvylfaxthsja5',
-    minter: 'stars1klg9pj576qra5862svgwcs07r40sdks4xk62j3t9567k2z79nr6qn406kq',
-    sg721: 'stars1j875gkljknhq7n2g5lsckl3zuj2tyxvqgz5gyku0xxssl0usm5wqc750p3'
+require('dotenv').config()
 
-    // rpcEndpoint: 'https://rpc.elgafar-1.stargaze-apis.com/',
-    // account: 'stars1pz797ycke6eusr77dcr9srx7c5pddztcln94lg',
-    // sg721: 'stars1j875gkljknhq7n2g5lsckl3zuj2tyxvqgz5gyku0xxssl0usm5wqc750p3',
-    // minter: 'stars1klg9pj576qra5862svgwcs07r40sdks4xk62j3t9567k2z79nr6qn406kq',
-    // chainId: "elgafar-1"
+module.exports = {
+    // rpcEndpoint: 'https://rpc.stargaze-apis.com/',             // Stargaze Mainnet rpc
+    rpcEndpoint: 'https://rpc.elgafar-1.stargaze-apis.com/',      // Stargaze Testnet rpc
+    chainId: "elgafar-1",                                         // Stargaze Testnet Chain ID
+    account: process.env.ACCOUNT,                                 // Stargaze account address string
+    minter: process.env.MINTER,                                   // Stargaze Minter address string
+    sg721: process.env.SG721,                                     // Stargaze sg721 contract adress string
 }
 
 const defaultBech32Config = (

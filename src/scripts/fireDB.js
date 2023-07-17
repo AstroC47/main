@@ -3,22 +3,23 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc, doc, getDocs, getDoc, setDoc, where, query } from "firebase/firestore"; 
 import { getStorage, ref, getDownloadURL, listAll  } from "firebase/storage";
+require('dotenv').config()
 
 
 
 const firebaseConfig = {
 
-    apiKey: 'AIzaSyDge2EqOTgNqqRXVLulr_xJLa3q9ALTHPo',
+    apiKey: process.env.REACT_APP_APIKEY,
   
-    authDomain: "area-5f012.firebaseapp.com",
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
   
-    projectId: "area-5f012",
+    projectId: process.env.REACT_APP_PROJECTID,
   
-    storageBucket: "area-5f012.appspot.com",
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
   
-    messagingSenderId: "200420597498",
+    messagingSenderId: process.env.REACT_APP_MSGSENDERID,
   
-    appId: "1:200420597498:web:de3172d82ddde9f2a63343",
+    appId: process.env.REACT_APP_APPID,
   
   };
 

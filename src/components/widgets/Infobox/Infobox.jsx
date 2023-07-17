@@ -9,8 +9,8 @@ export default function Infobox(props) {
 
     for (let i = 1; i <= amountImages; i++) {
       const imgLink = await getImgUrl('preview/'+projectName+'/'+i+'.webp')
-      console.log(imgLink)
-      console.log(projectName)
+      //console.log(imgLink)
+      //console.log(projectName)
 
       let img = document.getElementById(projectName+i);
       img.setAttribute('src', imgLink);
@@ -24,7 +24,7 @@ export default function Infobox(props) {
     for (let i = 1; i <= 3; i++) {
 
       if (i == 1) {
-        console.log('true')
+        //console.log('true')
       }
       
       parallelImages.push({n:i,id:'parallelWorlds'+i,active:(i==1?true:false)});
@@ -34,7 +34,7 @@ export default function Infobox(props) {
   for (let i = 1; i <= 4; i++) {
 
     if (i == 1) {
-      console.log('true')
+      //console.log('true')
     }
     
     classcImages.push({n:i,id:'classifiedCats'+i,active:(i==1?true:false)});
@@ -100,7 +100,7 @@ export default function Infobox(props) {
 
 
 
-    <div className="infoBoxInnerFlex">
+    {/* <div className="infoBoxInnerFlex">
     <div className="infoBoxBorder">
     <div className="infoBox blankLite">
         <div className="infoBoxGrid">
@@ -118,7 +118,7 @@ export default function Infobox(props) {
 
     </div>
     </div>
-    </div>
+    </div> */}
 
     </>
   )
