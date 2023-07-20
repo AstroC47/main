@@ -18,8 +18,8 @@ export default function About() {
         <BorderInfoBox header={'Welcome to Area47'} text={textForBio}/>
       </div>
 
-    <BorderInfoBox header={'Hello and welcome to area47.'}
-    text={'We are a small team building the future of web3 entering the space through the NFT market.We aim to build and provide valuable cross chain projects'}/>
+    {/* <BorderInfoBox header={'Hello and welcome to area47.'}
+    text={'We are a small team building the future of web3 entering the space through the NFT market.We aim to build and provide valuable cross chain projects'}/> */}
 
 
     

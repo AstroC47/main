@@ -5,6 +5,8 @@ export default function Slide(props) {
 
 const name = props.name
 
+const mrktLink = props.mrktLink
+
 const [init,setInit] = useState(false)
 
 const images = props.images
@@ -153,6 +155,11 @@ const autoSlide = () => {
   }
 }
 
+const openExtLink = (e) => {
+  console.log(e.target.name)
+  window.open(e.target.name, '_blank');
+}
+
 
 useEffect(function() {
   if (init === false){
@@ -172,7 +179,7 @@ useEffect(function() {
             {images.map(({imageLink,id}) =>
             {
                 return(
-                <img id ={`${name+id}`} className={`sliderImage${name} sliderImage`} key={id} src={''} alt="img" />
+                <img id ={`${name+id}`} className={`sliderImage${name} sliderImage`} key={id} src={''} alt="img" name={`${mrktLink}`} onClick={openExtLink}/>
             )}
             )}
 

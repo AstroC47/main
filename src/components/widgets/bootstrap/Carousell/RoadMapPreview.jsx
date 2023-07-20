@@ -3,9 +3,12 @@ import React,{ useEffect } from 'react'
 export default function RoadMapPreview(props) {
 
   const previewClick = (e) => {
-    console.log(e.target.alt)
+    console.log(e.target.num)
+    window.open(e.target.name, '_blank');
+    console.log(e.target.key)
   }
 
+  const mrktLinks = props.mrktLinks
   const name = props.index;  
   
   // useEffect(function() {
@@ -26,7 +29,7 @@ export default function RoadMapPreview(props) {
   <div className="carousel-inner">
   {props.images.map( ({n, active, name, id}) => 
         <div key = {n}  className={`carousel-item ${active?"active":""}`}>
-        <img id={id} className="d-block w-100" alt={`${name}`}  onClick={previewClick}/>
+        <img id={id} key = {n} className="d-block w-100" alt={`${name}`}  onClick={previewClick} name = {mrktLinks[n-1]}/>
         </div>
     )
     }

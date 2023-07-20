@@ -62,7 +62,7 @@ export default function Basicgallery() {
                 </div>
             </div>
 
-            <Slide images = {neoImages} name={'neoAnimalia'}/>
+            <Slide images = {neoImages} name={'neoAnimalia'} mrktLink={'https://app.teritori.com/collection/tori-tori1rcmvfsn77pd6m04ctqj3wcu66pvrw9p265cdl72w4zarfup2rv7qnjklmn'}/>
 
             <div className="galleryInfo">
                 <div className="galleryHeading">Description:</div> 
@@ -96,7 +96,7 @@ export default function Basicgallery() {
                     <p className='artistName'> <b>Spotti</b> </p>
                 </div>
             </div>
-            <Slide images = {arcadicImages} name={'arcadicBliss'}/>
+            <Slide images = {arcadicImages} name={'arcadicBliss'} mrktLink={'https://www.stargaze.zone/marketplace/stars19rgrygcqt96tcetczq76ug2f387vkfscm9lee83hjs32dxll24gssrkjl2'}/>
 
 
             <div className="galleryInfo">

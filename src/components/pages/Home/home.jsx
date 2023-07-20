@@ -46,7 +46,7 @@ useEffect(function() {
       <div className="serviceInnerFlex">
         <div className="serviceBorder">
             <div className="service blankLite">
-            <Slide images = {slideImages} name={'newextCollectionSlide'}/>
+            <Slide images = {slideImages} name={'newextCollectionSlide'} mrktLink= {'https://www.stargaze.zone/marketplace/stars19rgrygcqt96tcetczq76ug2f387vkfscm9lee83hjs32dxll24gssrkjl2'}/>
             </div>
         </div>
       </div>

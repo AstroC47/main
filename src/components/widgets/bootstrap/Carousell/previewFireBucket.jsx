@@ -1,5 +1,6 @@
 import React from 'react'
 import fireDB, {getImgUrl} from '../../../../scripts/fireDB'
+import "./prevFB.css"
 
 
 export default function preview() {

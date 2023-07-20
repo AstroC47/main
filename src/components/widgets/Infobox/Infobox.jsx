@@ -40,6 +40,13 @@ export default function Infobox(props) {
     classcImages.push({n:i,id:'classifiedCats'+i,active:(i==1?true:false)});
     
 }
+const classCMarktLinks = ['https://www.stargaze.zone/launchpad/stars1klg9pj576qra5862svgwcs07r40sdks4xk62j3t9567k2z79nr6qn406kq'
+                        ,'https://www.stargaze.zone/launchpad/stars1a62akq3au3m58ya3860su3weldumppwse4hktt7vgqxtdm7cu7nshy98ht'
+                        ,'https://www.stargaze.zone/launchpad/stars1q08g2em896ylj0f8ay0qnp8ghktstawlcdm3gr2m0vp3c9f0l2kq7hcqfe'
+                        ,'https://www.stargaze.zone/launchpad/stars1973t3j75vjen8m8mhpwyek4ym975rwq3fq4utpd0hsmm7xw37q8qywe3ua']
+const paraMrktLinks = ['https://www.stargaze.zone/marketplace/stars1s9ealreul8er9ypfskun3w7gvudueydchhay8f5thvs0a6llj7lqa6tv6m'
+                        ,'https://www.stargaze.zone/marketplace/stars1s9ealreul8er9ypfskun3w7gvudueydchhay8f5thvs0a6llj7lqa6tv6m'
+                        ,'https://www.stargaze.zone/marketplace/stars1s9ealreul8er9ypfskun3w7gvudueydchhay8f5thvs0a6llj7lqa6tv6m']
 
   useEffect(function() {
     loadImages('parallelWorlds',3)
@@ -53,7 +60,7 @@ export default function Infobox(props) {
     <div className="infoBox blankLite">
         <div className="infoBoxGrid">
 
-            <div className="gridImage"><RoadMapPreview images={classcImages} index={'2'} /></div>
+            <div className="gridImage"><RoadMapPreview images={classcImages} mrktLinks={classCMarktLinks} index={'2'} /></div>
             
             <div className="gridInfo">
                 <div className="infoBoxHeader"> Classified Cats</div> 
@@ -90,7 +97,7 @@ export default function Infobox(props) {
                 <div className="extraInfo">Physical original paintings available on request on our discord</div>
             </div>
 
-            <div className="gridImage"><RoadMapPreview images={parallelImages} index={'1'} /></div>
+            <div className="gridImage"><RoadMapPreview images={parallelImages} mrktLinks={paraMrktLinks} index={'1'} /></div>
 
         </div>
 
